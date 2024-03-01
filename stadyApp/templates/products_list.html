@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+</head>
+<body>
+    <h1>Available Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong>
+                <p>Starts: {{ product.start_datetime }}</p>
+                <p>Cost: ${{ product.cost }}</p>
+                <p>Number of Lessons: {{ product.lesson_set.count }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
